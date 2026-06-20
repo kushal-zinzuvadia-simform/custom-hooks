@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import type { FetchState, UseFetchOptions } from "../types/fetch";
+import type { FetchState, UseFetchOptions } from "../types/Fetch";
 
 export function useFetch<TData = unknown, TPayload = unknown>(
   url: string,

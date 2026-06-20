@@ -1,6 +1,6 @@
 import { useFetch } from "../hooks/useFetch";
 import { useSubmit } from "../hooks/useSubmit";
-import { BASE } from "../types/fetch";
+import { BASE } from "../types/Fetch";
 import { FetchStatus } from "./FetchStatus";
 
 export function DeletePost() {

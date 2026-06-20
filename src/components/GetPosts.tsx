@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useFetch } from "../hooks/useFetch";
-import { BASE } from "../types/fetch";
+import { BASE } from "../types/Fetch";
 import { FetchStatus } from "./FetchStatus";
 
 export function GetPosts() {
