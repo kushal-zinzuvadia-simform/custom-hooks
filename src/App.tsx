@@ -1,3 +1,9 @@
+import { FetchDemo } from "./components/FetchDemo";
+
 export function App() {
-  return <>App</>;
+  return (
+    <>
+      <FetchDemo />
+    </>
+  );
 }
