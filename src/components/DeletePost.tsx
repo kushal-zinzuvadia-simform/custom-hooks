@@ -25,6 +25,7 @@ export function DeletePost() {
       <FetchStatus
         isLoading={isLoading}
         error={error}
+        // DELETE responses return an empty body, so fall back to {} to signal success to FetchStatus.
         data={submitted && !isLoading && !error ? (data ?? {}) : null}
       />
     </section>
