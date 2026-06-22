@@ -2,6 +2,7 @@ import { useFetch } from "../hooks/useFetch";
 import { useSubmit } from "../hooks/useSubmit";
 import { BASE } from "../types/Fetch";
 import { FetchStatus } from "./FetchStatus";
+import { SubmitButton } from "./SubmitButton";
 
 export function DeletePost() {
   const { submitted, handleSubmit } = useSubmit();
@@ -14,13 +15,13 @@ export function DeletePost() {
   return (
     <section className="rounded border border-gray-200 bg-white p-4">
       <h2 className="mb-3 font-semibold">Delete Post (DELETE)</h2>
-      <button
-        onClick={handleSubmit}
+      <SubmitButton
+        label="Delete"
         disabled={isLoading || submitted}
-        className="rounded bg-red-600 px-3 py-1.5 text-sm text-white disabled:opacity-50 hover:bg-red-700 cursor-pointer disabled:cursor-not-allowed"
-      >
-        Delete
-      </button>
+        variant="red"
+        type="button"
+        onClick={handleSubmit}
+      />
       <FetchStatus
         isLoading={isLoading}
         error={error}

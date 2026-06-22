@@ -3,6 +3,7 @@ import { useFetch } from "../hooks/useFetch";
 import { useSubmit } from "../hooks/useSubmit";
 import { BASE } from "../types/Fetch";
 import { FetchStatus } from "./FetchStatus";
+import { SubmitButton } from "./SubmitButton";
 
 export function UpdatePost() {
   const [title, setTitle] = useState("");
@@ -39,13 +40,7 @@ export function UpdatePost() {
           required
           className="min-h-[70px] resize-y rounded border border-gray-300 px-2 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
-        <button
-          type="submit"
-          disabled={isLoading}
-          className="w-fit rounded bg-blue-600 px-3 py-1.5 text-sm text-white disabled:opacity-50 hover:bg-blue-700 cursor-pointer disabled:cursor-not-allowed"
-        >
-          Update
-        </button>
+        <SubmitButton label="Update" disabled={isLoading} />
       </form>
       <FetchStatus isLoading={isLoading} error={error} data={data} />
     </section>

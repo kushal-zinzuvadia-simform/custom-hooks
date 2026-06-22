@@ -3,8 +3,8 @@ import { useState } from "react";
 export function useSubmit() {
   const [submitted, setSubmitted] = useState(false);
 
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
+  function handleSubmit(e?: React.SubmitEvent) {
+    e?.preventDefault();
     setSubmitted(true);
   }
 
