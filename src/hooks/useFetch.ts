@@ -3,7 +3,12 @@ import type { FetchState, UseFetchOptions } from "../types/Fetch";
 
 export function useFetch<TData = unknown, TPayload = unknown>(
   url: string,
-  { method = "GET", payload, skip = false }: UseFetchOptions<TPayload> = {},
+  {
+    method = "GET",
+    payload,
+    headers,
+    skip = false,
+  }: UseFetchOptions<TPayload> = {},
 ) {
   const [state, setState] = useState<FetchState<TData>>({
     isLoading: false,
@@ -27,6 +32,7 @@ export function useFetch<TData = unknown, TPayload = unknown>(
         method,
         headers: {
           "Content-Type": "application/json",
+          ...headers,
         },
         body:
           hasBody && payload !== undefined
@@ -52,7 +58,7 @@ export function useFetch<TData = unknown, TPayload = unknown>(
         error: err instanceof Error ? err.message : "An unknown error occurred",
       });
     }
-  }, [url, method, payload, skip]);
+  }, [url, method, payload, headers, skip]);
 
   useEffect(() => {
     execute();
