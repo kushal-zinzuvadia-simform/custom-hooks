@@ -5,7 +5,7 @@ export const BASE = "https://jsonplaceholder.typicode.com";
 export interface UseFetchOptions<TPayload> {
   method?: HttpMethod;
   payload?: TPayload;
-  headers?: Record<string, string>;
+  headers?: HeadersInit;
   skip?: boolean;
 }
 
