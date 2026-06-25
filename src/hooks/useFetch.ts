@@ -20,11 +20,11 @@ export function useFetch<TData = unknown, TPayload = unknown>(
     async (signal?: AbortSignal) => {
       if (skip) return;
 
-      setState({
+      setState((prev) => ({
+        ...prev,
         isLoading: true,
-        data: null,
         error: null,
-      });
+      }));
 
       try {
         const hasBody = method !== "GET" && method !== "DELETE";
