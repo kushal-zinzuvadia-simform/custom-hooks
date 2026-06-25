@@ -14,3 +14,7 @@ export interface FetchState<TData> {
   data: TData | null;
   error: string | null;
 }
+
+export interface UseFetchResult<TData> extends FetchState<TData> {
+  refetch: () => void;
+}

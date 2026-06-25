@@ -1,5 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
-import type { FetchState, UseFetchOptions } from "../types/Fetch";
+import type {
+  FetchState,
+  UseFetchOptions,
+  UseFetchResult,
+} from "../types/Fetch";
 
 export function useFetch<TData = unknown, TPayload = unknown>(
   url: string,
@@ -9,7 +13,7 @@ export function useFetch<TData = unknown, TPayload = unknown>(
     headers,
     skip = false,
   }: UseFetchOptions<TPayload> = {},
-) {
+): UseFetchResult<TData> {
   const [state, setState] = useState<FetchState<TData>>({
     isLoading: false,
     data: null,
